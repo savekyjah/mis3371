@@ -27,11 +27,10 @@
                     </div>
                 </td>
                 <td>
-                    <h2>Doc McStuffins Practice</h2>
+                    <h2 id="title=text">Doc McStuffins Practice</h2>
                 </td>
                 <td valign="bottom" align="right width=20%">
-                    <p> Today's Date: <span id="today"></span></p>
-
+                    <p id="date-text"> Today's Date: <span id="today"></span></p>
                 </td>
             </tr>
         </table>
@@ -41,9 +40,9 @@
     <form action="thankyou.html">
         <center>
             <div class="format">
-                <table>
+                <table class="cntr">
                     <tr>
-                        <th colspan="4">Create Account</th>
+                        <th class="subject-heading" colspan="4">Create Account</th>
                     </tr>
                     <tr>
                         <td><label for="fname">First Name:</label></td>
@@ -81,29 +80,34 @@
                             title="Enter Last Name"
                             placeholder="McStuffins" />
                         </td>
-                    <tr>
+                    <tr class="rad">
                         <td><label for="pgender">Gender:</label></td>
-                        <td>
-                            <input type="radio" 
-                            id="g1" 
-                            name="pgender" 
-                            value="Male" />
-                            Male
-                        </td>
-                        <td>
-                            <input type="radio" 
-                            id="g2" 
-                            name="pgender" 
-                            value="Female" />
-                            Female
-                        </td>
-                        <td>
-                            <input type="radio" 
-                            id="g3" 
-                            name="pgender" 
-                            value="Other" />
-                            Other
-                        </td>
+                        <div class="rad3">
+                            <div>
+                                <td class="rad3_col2">
+                                    <input type="radio" id="g1" name="pgender" value="Male">
+                                </td>
+                                <td>
+                                    <p>Male</p>
+                                </td>
+                            </div>
+                            <div class="rad3_col2">
+                                <td>
+                                    <input type="radio" id="g2" name="pgender" value="Female">
+                                </td>
+                                <td>
+                                    <p>Female</p>
+                                </td>
+                            </div>
+                            <div class="rad3_col2">
+                                <td>
+                                    <input type="radio" id="g3" name="pgender" value="Other">
+                                </td>
+                                <td>
+                                    <p>Other</p>
+                                </td>
+                            </div>
+                        </div>
                     </tr>
                     <tr>
                         <td><label for="dob">Date of Birth:</label></td>
