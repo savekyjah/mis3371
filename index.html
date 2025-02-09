@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<!--
+<!-- 
 --- Name: Kyjah Savery
 --- Date created: February 8, 2025
 --- Date last edited: February 8, 2025
 --- Version: 1.0
 --- Description: Homework 1 HTML Patient Form
+ -->
 
--->
 <html lang+"en">
 
 <head>
     <link rel="stylesheet" href="hw1.css"> <!-- links to css file-->
 
-    <script src="script.js"></script>
+    <script defer src="hw1.js"></script>
     <title>Medical Patient Form</title>
 
 </head>
@@ -27,7 +27,7 @@
                     </div>
                 </td>
                 <td>
-                    <h2>Doc McStuffins</h2>
+                    <h2>Doc McStuffins Practice</h2>
                 </td>
                 <td valign="bottom" align="right width=20%">
                     <p> Today's Date: <span id="today"></span></p>
@@ -251,7 +251,7 @@
                             id="email"
                             required
                             title="Enter your email address"
-                            placeholder="DocRMcStuffins@domain.tld"/>
+                            placeholder="name@domain.tld"/>
                         </td>
                     </tr>
                     <td><label for="phone">Phone Number:</label></td>
@@ -364,9 +364,9 @@
                              type="range"
                              name="range"
                              id="range"
-                           min="1"
-                           max="10"
-                           value="0"
+                             min="1"
+                             max="10"
+                             value="0"
                            />
                            <span id="range-slider"></span>
                          </td>
@@ -378,11 +378,72 @@
                         <th colspan="4">Portal Account</th>
                     </tr>
                     
-
+                    <tr>
+                        <td><label for="uid">User ID:</label></td>
+                        <td>
+                            <input 
+                            type="text"
+                            name="uid"
+                            id="uid"
+                            maxlength="20"
+                            required
+                            title="Enter a user ID:"
+                            placeholder="Your user ID"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="pword">Password:</label></td>
+                        <td>
+                            <input 
+                            type="password"
+                            name="pword"
+                            id="pword"
+                            minlength="10"
+                            maxlength="30"
+                            required
+                            title="Enter a password:"
+                            placeholder="Your password here"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="cpword">Confirm Password:</label></td>
+                        <td>
+                            <input 
+                            type="password"
+                            name="cpword"
+                            id="cpword"
+                            minlength="10"
+                            maxlength="30"
+                            required
+                            title="Your password"
+                            placeholder="Your password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <center>
+                                <input type="submit" name="submit">
+                                <input type="reset" name="reset">
+                            </center>
+                        </td>
+                    </tr>
+                    
                 </table>
+                
             </div>
         </center>
     </form>
+
+    <footer>
+        <table width="100%"> 
+            <tr colspan="3">
+                <td>
+                    <p>&#169; DocMcStuffins Practice <a href="contact.html">Contact Us!</a></p>
+                </td>
+            </tr>
+        
+        </table>
+    </footer> 
 </body>
 
 </html>
