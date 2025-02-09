@@ -9,32 +9,112 @@
 -->
 <html lang+"en">
 
-    <head>
-        <link rel="stylesheet" href="hw1.css"> <!-- links to css file-->
+<head>
+    <link rel="stylesheet" href="hw1.css"> <!-- links to css file-->
 
-         <script src="script.js"></script>
-         <title>Medical Patient Form</title>
+    <script src="script.js"></script>
+    <title>Medical Patient Form</title>
 
-    </head>
-    <body>
-        <header>
-            <table width="100%">
-                <tr>
-                    <td valign="top" align="left" width="20%">
-                        <div class="image">
-                            <img align="center" src="cliniclogo.png" alt="Medlogo" width="80px" id="logo"/>
-                        </div>
-                    </td>
-                    <td>
-                        <h2>Doc McStuffins</h2>
-                    </td>
-                    <td valign="bottom" align="right width=20%"> 
-                        <p> Today's Date: <span id="today"></span></p>
+</head>
 
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <hr>
-    </body>
+<body>
+    <header>
+        <table width="100%">
+            <tr>
+                <td valign="top" align="left" width="20%">
+                    <div class="image">
+                        <img align="center" src="images/stuffy.png" alt="Medlogo" width="80px" id="logo" />
+                    </div>
+                </td>
+                <td>
+                    <h2>Doc McStuffins</h2>
+                </td>
+                <td valign="bottom" align="right width=20%">
+                    <p> Today's Date: <span id="today"></span></p>
+
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+
+    <form action="thankyou.html">
+        <center>
+            <div class="format">
+                <table>
+                    <tr>
+                        <th colspan="4">Create Account</th>
+                    </tr>
+                    <tr>
+                        <td><label for="fname">First Name:</label></td>
+                        <td>
+                            <input type="text" 
+                            name="fname" 
+                            id="fname" 
+                            maxlength="30" 
+                            required
+                            it
+                            tle="Enter First Name"
+                            placeholder="Doc" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="mint">Middle Initial:</label></td>
+                        <td>
+                            <input type="text" 
+                            name="mint" 
+                            id="mint" 
+                            maxlength="1" 
+                            required 
+                            title="Enter Middle Initial"
+                            placeholder="R" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Last Name:</label></td>
+                        <td>
+                            <input type="text" 
+                            name="lname" 
+                            id="lname" 
+                            maxlength="30" 
+                            required 
+                            title="Enter Last Name"
+                            placeholder="McStuffins" />
+                        </td>
+                    <tr>
+                        <td><label for="pgender">Gender:</label></td>
+                        <td>
+                            <input type="radio" 
+                            id="g1" 
+                            name="pgender" 
+                            value="Male" />
+                            Male
+                        </td>
+                        <td>
+                            <input type="radio" 
+                            id="g2" 
+                            name="pgender" 
+                            value="Female" />
+                            Female
+                        </td>
+                        <td>
+                            <input type="radio" 
+                            id="g3" 
+                            name="pgender" 
+                            value="Other" />
+                            Other
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of Birth:</label></td>
+                        <td>
+                            <input type="date" id="dob" name="dob">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </form>
+</body>
+
 </html>
