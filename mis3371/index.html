@@ -8,7 +8,6 @@
  -->
 
 <html lang+"en">
-
 <head>
     <link rel="stylesheet" href="hw1.css"> <!-- links to css file-->
 
@@ -16,7 +15,6 @@
     <title>Medical Patient Form</title>
 
 </head>
-
 <body>
     <header>
         <table width="100%">
@@ -30,7 +28,7 @@
                     <h2 id="title=text">Doc McStuffins Practice</h2>
                 </td>
                 <td valign="bottom" align="right width=20%">
-                    <p id="date-text"> Today's Date: <span id="today"></span></p>
+                    <p id="date-text"> Today's Date: <span class="updateDate"></span></p>
                 </td>
             </tr>
         </table>
@@ -64,7 +62,6 @@
                             name="mint" 
                             id="mint" 
                             maxlength="1" 
-                            required 
                             title="Enter Middle Initial"
                             placeholder="R" />
                         </td>
@@ -80,34 +77,18 @@
                             title="Enter Last Name"
                             placeholder="McStuffins" />
                         </td>
-                    <tr class="rad">
+                    <tr>
                         <td><label for="pgender">Gender:</label></td>
-                        <div class="rad3">
-                            <div>
-                                <td class="rad3_col2">
-                                    <input type="radio" id="g1" name="pgender" value="Male">
-                                </td>
-                                <td>
-                                    <p>Male</p>
-                                </td>
-                            </div>
-                            <div class="rad3_col2">
-                                <td>
-                                    <input type="radio" id="g2" name="pgender" value="Female">
-                                </td>
-                                <td>
-                                    <p>Female</p>
-                                </td>
-                            </div>
-                            <div class="rad3_col2">
-                                <td>
-                                    <input type="radio" id="g3" name="pgender" value="Other">
-                                </td>
-                                <td>
-                                    <p>Other</p>
-                                </td>
-                            </div>
-                        </div>
+                        <td>
+                            <input type="radio" id="g1" name="pgender" value="Male"> Male
+                        </td>
+                        <td>
+                            <input type="radio" id="g2" name="pgender" value="Female">Female
+                        </td>
+    
+                        <td>
+                            <input type="radio" id="g3" name="pgender" value="Other"> Other
+                        </td>
                     </tr>
                     <tr>
                         <td><label for="dob">Date of Birth:</label></td>
@@ -157,8 +138,7 @@
                             type="text" 
                             name="address2" 
                             id="address2" 
-                            maxlength="30" 
-                            required 
+                            maxlength="30"  
                             placeholder="1234 Address">
                         </td>
                     </tr>
@@ -445,9 +425,7 @@
                     <p>&#169; DocMcStuffins Practice <a href="contact.html">Contact Us!</a></p>
                 </td>
             </tr>
-        
         </table>
     </footer> 
 </body>
-
 </html>

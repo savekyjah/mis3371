@@ -6,14 +6,17 @@
 // Description: Homework 1 JS Patient Form
 
 //dynamic date js code
-const d = new Date();
-let text = d.toLocaleDateString();
-document.getElementById("today").innerHTML = text;
-const date_elements = document.getElementsByClassName("today2");
+// const d = new Date();
+// let text = d.toLocaleDateString();
+// document.getElementById("today").innerHTML = text;
 
-for(let i = 0;i < date_elements.length; i++){
-    date_elements[i].textContent = text;
-}
+(async function(){
+    const dateElements = document.getElementsByClassName("updateDate");
+    let currentDate = new Date().toLocaleDateString();
+    for(let i = 0;i < dateElements.length; i++){
+        dateElements[i].textContent = currentDate;
+    }
+})();
 
 //slider js code
 let slider = document.getElementById("range");
