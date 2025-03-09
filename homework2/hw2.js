@@ -1,4 +1,3 @@
-
 // Name: Kyjah Savery
 // Date created: March 5, 2025
 // Date last edited: March 5, 2025
@@ -141,58 +140,47 @@ function validateUid() {
     }
 }
 //pword validation
-function validatePassword(pword, uid) {
+function validatePword() {
+    const pword = document.getElementById("pword").value;
+    const uid = document.getElementById("uid").value;
     let errorMessage = [];
-
-    // Check if password contains at least one lowercase letter
     if (!pword.match(/[a-z]/)) errorMessage.push("Enter at least one lowercase letter");
-
-    // Check if password contains at least one uppercase letter
     if (!pword.match(/[A-Z]/)) errorMessage.push("Enter at least one uppercase letter");
-
-    // Check if password contains at least one number
     if (!pword.match(/[0-9]/)) errorMessage.push("Enter at least one number");
-
-    // Check if password contains at least one special character
     if (!pword.match(/[!\@#\$%&*\-_\\.+\(\)]/)) errorMessage.push("Enter at least one special character");
-
-    // Check if the password contains the user ID
     if (pword.includes(uid)) errorMessage.push("Password can't contain user ID");
 
-    // Return error messages or success message
     if (errorMessage.length > 0) {
-        return errorMessage; // Return the array of error messages
-    } else {
-        return "Password is valid."; // No errors, password is valid
-    }
-}
-
-
-let result = validatePassword(pword, uid);
-console.log(result);
-
-
-//cpword validation
-function cpword() {
-    pword1 = document.getElementById("pword").value;
-    pword2 = document.getElementById("cpword").value;
-
-    if (pword1 !== pword2) {
-        document.getElementById("cpword-error").innerHTML = 
-        "Passwords don't match";
+        document.getElementById("pword-error").innerHTML = errorMessage.join("<br>");
         return false;
     } else {
-        document.getElementById("cpword-error").innerHTML = 
-        "Passwords match";
+        document.getElementById("pword-error").innerHTML = "";
         return true;
     }
 }
+
+//cpword validation
+function confirmPword() {
+    const pword1 = document.getElementById("pword").value;
+    const pword2 = document.getElementById("cpword").value;
+
+    if (pword1 !== pword2) {
+        document.getElementById("pword2-error").innerHTML = "Passwords don't match";
+        return false;
+    } else {
+        document.getElementById("pword2-error").innerHTML = "";
+        return true;
+    }
+}
+
 //review button
 function reviewInput() {
-    var formcontent = document.getElementById("signup");
-    var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
-    for (let i = 0; i < formcontent.length; i++) {
+    console.log("Review button clicked"); // Debugging statement
+    const formcontent = document.getElementById("signup");
+    let formoutput = "<table class='output'><th colspan='3'>Review Your Information:</th>";
+    for (let i = 0; i < formcontent.elements.length; i++) {
         if (formcontent.elements[i].value !== "") {
+            console.log(formcontent.elements[i].name, formcontent.elements[i].value); // Debugging statement
             switch (formcontent.elements[i].type) {
                 case "checkbox":
                     if (formcontent.elements[i].checked) {
@@ -212,7 +200,28 @@ function reviewInput() {
     formoutput += "</table>";
     document.getElementById("showInput").innerHTML = formoutput;
 }
+
 function removeReview() {
     document.getElementById("showInput").innerHTML = "";
 }
 
+// Ensure the review button is bound to the reviewInput function
+document.getElementById("review").addEventListener("click", reviewInput);
+document.getElementById("remove-review-button").addEventListener("click", removeReview);
+
+// Form submission validation
+document.querySelector("form").addEventListener("submit", function(event) {
+    const uidValid = validateUid();
+    const pwordValid = validatePword();
+    const cpwordValid = confirmPword();
+    const dobValid = validateDob();
+
+    console.log("UID Valid:", uidValid); // Debugging statement
+    console.log("Password Valid:", pwordValid); // Debugging statement
+    console.log("Confirm Password Valid:", cpwordValid); // Debugging statement
+    console.log("DOB Valid:", dobValid); // Debugging statement
+
+    if (!uidValid || !pwordValid || !cpwordValid || !dobValid) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    }
+});

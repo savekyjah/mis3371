@@ -164,7 +164,7 @@ table.output,
 tr.output,
 td.output {
     width: 500px;
-    background-color: #9a8c98;
+    background-color: #d091c7;
     padding: 10px;
     border-spacing: 2px;
     border-radius: 20px;
@@ -173,7 +173,7 @@ td.output {
 
 td.output {
   width: 500px;
-  background-color: #9a8c98;
+  background-color: #d091c7;
   padding: 10px;
   border-spacing: 2px;
 }
