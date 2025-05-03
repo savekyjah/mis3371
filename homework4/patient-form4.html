@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <!-- 
 --- Name: Kyjah Savery
---- Date created: March 5, 2025
---- Date last edited: March 5, 2025
+--- Date created: May 2, 2025
+--- Date last edited: May 2, 2025
 --- Version: 1.1
---- Description: Homework 2 HTML Patient Form
+--- Description: Homework 4 HTML Patient Form
  -->
 
 <html lang+"en">
 <head>
-    <link rel="stylesheet" href="style3.css"> <!-- links to css file-->
+    <link rel="stylesheet" href="style4.css"> <!-- links to css file-->
 
-    <script defer src="hw3.js"></script>
+    <script defer src="hw4.js"></script>
     <title>Medical Patient Form</title>
 
 </head>
+
 <body>
     <header>
         <table width="100%">
             <tr>
                 <td valign="top" align="left" width="20%">
                     <div class="image">
-                        <img align="center" src="images/stuffy3.png" alt="Medlogo" width="80px" id="logo" />
+                        <img align="center" src="images/stuffy4.png" alt="Medlogo" width="80px" id="logo" />
                     </div>
                 </td>
                 <td>
-                    <h2 id="title=text">Doc McStuffins Practice</h2>
+                    <h2 id="title-text">Doc McStuffins Practice</h2>
                 </td>
-                <td valign="bottom" align="right width=20%">
-                    <p id="date-text"> Today's Date: <span class="updateDate"></span></p>
+                <td valign="bottom" align="right" width="20%">
+                    <p id="date-text"> Today's Date: <span class="updateDate"></span></p>       
                 </td>
+
+    <hr>
             </tr>
         </table>
     </header>
     <hr>
+<!-- insert welcome message-->
+<div id="user-greeting"></div>
 
-    <form action="thankyou3.html">
+<div id="welcome-container">
+    <span id="welcome1"></span>
+    <span id="welcome2"></span>
+</div>
+<!-- iframe-->
+<div class="iframe-container">
+    <iframe class="frame" src="https://www.mchllp.com/" frameborder="0"></iframe>
+</div>
+    <form action="thankyou4.html">
         <center>
             <div class="format">
                 <table class="cntr">
@@ -441,6 +454,19 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class= "td1">
+                            <label for="remember-me">Remember Me:</label>
+                        </td>
+                        <td>
+                            <input
+                                type="checkbox"
+                                id="remember-me"
+                                name="remember-me"
+                                checked
+                            />
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="4">
                             <center>
                                 <input type="submit" name="submit">
@@ -475,7 +501,7 @@
         <table width="100%"> 
             <tr colspan="3">
                 <td>
-                    <p>&#169; DocMcStuffins Practice <a href="contact3.html">Contact Us!</a></p>
+                    <p>&#169; DocMcStuffins Practice <a href="contact4.html">Contact Us!</a></p>
                 </td>
             </tr>
         </table>

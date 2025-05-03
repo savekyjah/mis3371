@@ -1,8 +1,8 @@
 // Name: Kyjah Savery
-// Date created: March 5, 2025
-// Date last edited: March 5, 2025
+// Date created: May 2, 2025
+// Date last edited: May 2, 2025
 // Version: 1.1
-// Description: Homework 2 JS Patient Form
+// Description: Homework 4 JS Patient Form
 
 //dynamic date js code
 // const d = new Date();
@@ -16,6 +16,85 @@
         dateElements[i].textContent = currentDate;
     }
 })();
+document.addEventListener("DOMContentLoaded", function () {
+    const dateSpan = document.querySelector('.updateDate');
+    if (dateSpan) {
+        const today = new Date().toLocaleDateString();
+        dateSpan.textContent = today;
+    }
+});
+
+// Set a cookie with expiry in hours
+function setCookie(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000)); // X hours from now
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+}
+
+// Get a cookie by name
+function getCookie(name) {
+    const cookieName = name + "=";
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        cookie = cookie.trim();
+        if (cookie.indexOf(cookieName) === 0) {
+            return decodeURIComponent(cookie.substring(cookieName.length));
+        }
+    }
+    return "";
+}
+
+// Delete all cookies
+function deleteAllCookies() {
+    document.cookie.split(";").forEach(function(cookie) {
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    });
+}
+
+// Display greeting message and logic for new/returning user
+document.addEventListener("DOMContentLoaded", function () {
+    const greetingDiv = document.getElementById("user-greeting");
+    const firstNameCookie = getCookie("firstName");
+
+    if (firstNameCookie) {
+        greetingDiv.innerHTML = `
+            <div style="background: #e6f7ff; padding: 10px; text-align: center; font-size: 1.2em;">
+                Hello, ${firstNameCookie}!<br>
+                <label><input type="checkbox" id="new-user-check"> Not ${firstNameCookie}? Click here to start as a new user.</label>
+            </div>
+        `;
+
+        // Add event listener for "new user" checkbox
+        document.getElementById("new-user-check").addEventListener("change", function () {
+            if (this.checked) {
+                deleteAllCookies();
+                document.getElementById("fname").value = "";
+                alert("Cookie cleared. You can now enter a new user.");
+                location.reload(); // Refresh the page to remove old greeting
+            }
+        });
+    } else {
+        greetingDiv.innerHTML = `
+            <div style="background: #e6f7ff; padding: 10px; text-align: center; font-size: 1.2em;">
+                Hello, New User!
+            </div>
+        `;
+    }
+
+    // Save cookie when name is entered
+    const fnameInput = document.getElementById("fname");
+    if (fnameInput) {
+        fnameInput.addEventListener("input", function () {
+            if (fnameInput.value.trim() !== "") {
+                setCookie("firstName", fnameInput.value.trim(), 48); // expires in 48 hours
+            }
+        });
+    }
+});
+
 
 //slider js code
 let slider = document.getElementById("range");
@@ -269,6 +348,7 @@ function validateEverything() {
         showAlert();
     }
 }
+
 // validate city
 function validateCity() {
     city = document.getElementById("city").value.trim();
@@ -304,6 +384,7 @@ function validateFname() {
         } 
          
     }
+}
     //last name validation
 function validateLname() {
     fname = document.getElementById("lname").value.trim();

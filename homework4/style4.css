@@ -1,14 +1,19 @@
 /* 
     Name: Kyjah Savery
-    Date created: March 5, 2025
-    Date last edited: March 5, 2025
+    Date created: May 2, 2025
+    Date last edited: May 2, 2025
     Version: 1.1
-    Description: Homework 2 CSS Patient Form
+    Description: Homework 4 CSS Patient Form
 */
 
 header {
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: #f2e9e4;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 20x 40x rgba(0,0,0,0.1);
     color: #22223b;
   }
   
@@ -220,4 +225,59 @@ td.output {
   margin-top: 20px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+}
+/*iframe*/
+.iframe-container {
+  position: absolute;
+  top: 30%;
+  right: 15px;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.iframe-container iframe {
+  width: 95%;
+  height:20%;
+  border: 1px solid black;
+
+}
+
+/*#welcome1 {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family:'optima' , sans-serif;
+  font-weight: normal;
+}
+
+#welcome2 {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family:'optima' , sans-serif;
+  font-weight: normal;
+}
+  */
+  #welcome-container {
+    background-color: #e6f7ff;
+    border-bottom: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative; /
+    z-index: 999; 
+    color: #333;
+}
+
+#welcome-container a {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.95em;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #0073e6;
+    cursor: pointer;
 }
